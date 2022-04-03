@@ -1,0 +1,6 @@
+server:
+  port: 8001
+# JWT
+jwt:
+  header: Authorization # token返回头部
+  expireTime: 1 # 有效时间（分）
