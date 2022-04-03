@@ -47,11 +47,11 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
             response.setStatus(HttpServletResponse.SC_FOUND);
             throw new RuntimeException("token为空，请重新登录");
         }
-//        String userId;
+        String userId;
         String password = "";
         try {
             // 验证 token 中的 userId
-//            userId = JWT.decode(token).getAudience().get(0);
+            userId = JWT.decode(token).getAudience().get(0);
             // 校验token是否合法
             JwtUtil.validateToken(token, password);
         } catch (TokenExpiredException e){
